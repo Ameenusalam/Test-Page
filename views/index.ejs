@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">MELATTUR <span>EVENTS</span></div>
+    </nav>
+
+    <header class="hero">
+        <div class="glass" style="padding: 4rem; max-width: 900px;">
+            <h1>The Ultimate Musical Experience</h1>
+            <p>Join us for an unforgettable night of melody and rhythm featuring the finest voices of Kerala. Melattur Events presents a spectacular musical show at the heart of Malappuram.</p>
+            <a href="#booking" class="btn">BOOK YOUR SEATS</a>
+        </div>
+    </header>
+
+    <section class="artists" id="artists">
+        <h2 class="section-title">Stage <span>Performers</span></h2>
+        <div class="artist-grid">
+            <% artists.forEach(artist => { %>
+                <div class="artist-card glass">
+                    <img src="<%= artist.image %>" alt="<%= artist.name %>" class="artist-img">
+                    <h3><%= artist.name %></h3>
+                    <p><%= artist.description %></p>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <section class="booking" id="booking" style="padding: 10rem 10%; text-align: center;">
+        <div class="glass" style="padding: 5rem;">
+            <h2>Don't Miss Out!</h2>
+            <p style="margin: 2rem 0; color: var(--text-muted);">Experience the magic live on stage. Limited seats available for this exclusive show.</p>
+            <a href="#" class="btn">RESERVE NOW</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Melattur Events. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
